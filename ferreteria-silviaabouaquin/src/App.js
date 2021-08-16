@@ -3,17 +3,17 @@ import React, { Fragment, useState } from "react";
 import './App.css';
 import NavBar from './Components/NavBar'
 import Producto from './Components/Producto';
-import Cart from './Cart';
+import Cart from './Components/Cart';
 
 function App() {
   //Estado de mis productos
   const [productos, setProductos] = useState([
-    { id: 1, descripcion: 'Balde de Albañil', precio: 500 },
-    { id: 2, descripcion: 'Fratacho Plastico', precio: 500 },
-    { id: 3, descripcion: 'Caja de chapa', precio: 200 },
-    { id: 4, descripcion: 'Latex interior', precio: 2500 },
-    { id: 5, descripcion: 'Llave exterior', precio: 150 },
-    { id: 6, descripcion: 'Cable bipolar', precio: 5000 }
+    { id: 1, descripcion: 'Balde de Albañil', precio: 500, stock: 24 },
+    { id: 2, descripcion: 'Fratacho Plastico', precio: 500, stock: 30 },
+    { id: 3, descripcion: 'Caja de chapa', precio: 200 , stock: 40 },
+    { id: 4, descripcion: 'Latex interior', precio: 2500 , stock: 5 },
+    { id: 5, descripcion: 'Llave exterior', precio: 150 , stock: 36},
+    { id: 6, descripcion: 'Cable bipolar', precio: 5000, stock: 10 }
   ])
 
   //estado del carrito
@@ -37,10 +37,11 @@ function App() {
               cart={cart}
               setCart={setCart}
               productos={productos}
+              StockInitial={producto.stock}
               />
           ))}
           <Cart
-          cart={cart}
+          cart = {cart}
           />
         </Fragment>
 
