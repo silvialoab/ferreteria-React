@@ -1,7 +1,6 @@
 import React from 'react';
 import './cart.css'
-//Importo el componente Producto
-import Producto from './Producto'
+
 
 const Cart = () => {
     return (
