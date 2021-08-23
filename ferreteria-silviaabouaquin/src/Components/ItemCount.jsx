@@ -1,35 +1,42 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({stock}) => {
+const ItemCount = (props) => {
+    const [stock, setstock] = useState(props.stock)
+    const [count, setCount] = useState(0)
 
-    const [count, setCount] = useState(1)
+    const handleStock = {
+        addStock:()=>{
+            if(stock===0){
+                alert('No hay mas stock')
+            } else{
+                setCount(count+1)
+                setstock(stock-1)
+            }        
+        },
 
-    const add=()=>{
-        if(count===stock){
-            alert('no se pueden agregar mas productos')
-        } else {
-            setCount(count+1)
+        subStock:()=>{
+            if(count===0){
+                alert('no se pueden quitar mas productos')
+            } else {
+                setCount(count-1)
+                setstock(stock+1)
+            }
         }
-    }
+    }  
 
-    const sub=()=>{
-        if(count===0){
-            alert('no se pueden quitar mas productos')
-        } else {
-            setCount(count-1)
-        }
-    }
-      
     return (
         <div>
-            <button type="button" onClick={add}>
+            <button type="button" onClick={handleStock.addStock} disabled={stock==='0'}>
                 +
             </button>
             <button type="button">
                 {count}
             </button>
-            <button type="button" onClick={sub}>
+            <button type="button" onClick={handleStock.subStock} disabled={stock==='0'}>
                 -
+            </button>
+            <button type="button">
+                Stock disponible: {stock}
             </button>
             <button type="button">
                 Agregar al Carrito

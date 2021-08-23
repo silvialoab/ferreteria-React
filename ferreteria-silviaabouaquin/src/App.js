@@ -4,7 +4,7 @@ import ItemListContainer from './Components/ItemListContainer'
 
 function App() {
   return (
-    <ItemListContainer titulo='LOPEZ - mayorista ferretero' />
+    <ItemListContainer titulo='LOPEZ - MAYORISTA FERRETERO' />
   );
 }
 

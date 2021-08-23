@@ -1,15 +1,15 @@
 import ItemCount from "./ItemCount"
 
 
-const Item = ({id, descripcion, StockInitial, precio, stock}) => {
+const ItemDetail = ({descripcion, precio, stock, imagen}) => {
     return (
         <div className='item'>
-            
+            <h2>Componente Detail</h2>
             <ul>
-                <li>{id}</li>
                 <li>{descripcion}</li>
-                <li>Stock Actual: {StockInitial} </li>
+                <li>Stock Actual: {stock} </li>
                 <li>${precio}</li>
+                <img style={{width:"60%"}}src={imagen} alt={descripcion} />
                 <ItemCount stock={stock} />
             </ul>
         </div>
@@ -18,4 +18,4 @@ const Item = ({id, descripcion, StockInitial, precio, stock}) => {
 
 }
 
-export default Item
+export default ItemDetail
