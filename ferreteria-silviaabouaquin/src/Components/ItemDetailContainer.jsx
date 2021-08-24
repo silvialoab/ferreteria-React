@@ -16,7 +16,7 @@ const ItemDetailContainer = () =>{
             })
         }
         productos().then((items)=>{
-            const producto = items.find(producto => producto.id==='1')
+            const producto = items.find(producto => producto.id===1)
             setProducto(producto)
             setCargando(false)
         })
