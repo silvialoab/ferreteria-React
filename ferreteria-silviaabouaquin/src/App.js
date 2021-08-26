@@ -18,7 +18,9 @@ function App() {
         <Route path="/">
           <ItemListContainer titulo='Lo que buscas, y mas.....' />  
         </Route>  
-          
+        <Route path="/:producto">
+          <ItemListContainer titulo='Lo que buscas, y mas.....' />  
+        </Route>  
         </Switch>
       </div>
     </BrowserRouter>
