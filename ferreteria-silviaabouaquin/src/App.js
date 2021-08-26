@@ -1,10 +1,27 @@
-//import logo from './logo.svg';
 import './App.css';
-import ItemListContainer from './Components/ItemListContainer'
+import Navbar from './Components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <ItemListContainer titulo='LOPEZ - MAYORISTA FERRETERO' />
+    <BrowserRouter>
+      <div className="App"  >
+        <Navbar />
+        <Switch>
+        <Route path="/">
+          <ItemListContainer titulo='LOPEZ - MAYORISTA FERRETERO' />  
+        </Route>  
+          
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

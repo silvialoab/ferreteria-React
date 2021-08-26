@@ -1,17 +1,16 @@
 import React from 'react';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList';
-import Navbar from './NavBar'
 
-const ItemListContainer = ({titulo}) => {
+
+const ItemListContainer = (props) => {
       
     return (
         <div>
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh', backgroundColor:'cadetblue'}}>
-                <h1 >{titulo}</h1>
-            </div>
-            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh', backgroundColor:'cadetblue'}}>
-                <Navbar />
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh', backgroundColor:'grey'}}>
+                <h1 >{props.titulo}</h1>
+                <h2 >{props.subtitulo}</h2>
+                <img src='./images/logopeq.jpg' alt='logopeq' />
             </div>
             <ItemList />
             <ItemDetailContainer />
