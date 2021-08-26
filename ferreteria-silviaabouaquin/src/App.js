@@ -15,11 +15,11 @@ function App() {
       <div className="App"  >
         <Navbar />
         <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <ItemListContainer titulo='Lo que buscas, y mas.....' />  
         </Route>  
-        <Route path="/:producto">
-          <ItemListContainer titulo='Lo que buscas, y mas.....' />  
+        <Route path="/:producto" exact>
+          <ItemListContainer titulo='Productos' />  
         </Route>  
         </Switch>
       </div>
