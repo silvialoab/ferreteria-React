@@ -4,7 +4,7 @@ const NavBar = () => {
     return(
         <div className='app-navbar'>
             <div className='navbar-img'>
-                <p>LOGO</p>
+                <p>LOPEZ MAYORISTA FERRETERO</p>
             </div>
             <div className='navbar-menu'>
                 <Link to="/"><p>Home</p></Link>

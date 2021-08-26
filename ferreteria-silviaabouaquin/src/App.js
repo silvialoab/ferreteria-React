@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Switch>
         <Route path="/">
-          <ItemListContainer titulo='LOPEZ - MAYORISTA FERRETERO' />  
+          <ItemListContainer titulo='Lo que buscas, y mas.....' />  
         </Route>  
           
         </Switch>

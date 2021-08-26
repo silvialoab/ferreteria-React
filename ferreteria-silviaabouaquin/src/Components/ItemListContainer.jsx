@@ -10,7 +10,6 @@ const ItemListContainer = (props) => {
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '20vh', backgroundColor:'grey'}}>
                 <h1 >{props.titulo}</h1>
                 <h2 >{props.subtitulo}</h2>
-                <img src='./images/logopeq.jpg' alt='logopeq' />
             </div>
             <ItemList />
             <ItemDetailContainer />

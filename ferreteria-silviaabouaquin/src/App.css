@@ -4,6 +4,32 @@ button {
   width: 150px;
 }
 
+
+.App {
+  text-align: center;
+}
+
+.app-navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: cadetblue;
+  color: wheat;
+}
+
+.navbar-img p{
+  font-size: 25px;
+  margin: 20px;
+}
+
+.navbar-menu{
+  display: flex;
+}
+
+.navbar-menu p{
+  margin: 20px;
+}
+
 .item{
   width: 30%;
   margin: 20px;
