@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react"
 import ItemDetail from './ItemDetail'
 import data from './data'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () =>{
     
     const [producto, setProducto] = useState([])
     const [cargando, setCargando] = useState(true)
+
+    const {categoria, id} = useParams()  
 
     useEffect(() => {
         const productos = () => {
@@ -16,7 +19,7 @@ const ItemDetailContainer = () =>{
             })
         }
         productos().then((items)=>{
-            const producto = items.find(producto => producto.id===1)
+            const producto = items.find(producto => producto.id===id)
             setProducto(producto)
             setCargando(false)
         })

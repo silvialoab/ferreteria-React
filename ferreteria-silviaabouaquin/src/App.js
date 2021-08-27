@@ -7,7 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import ItemDetailContainer from './Components/ItemDetailContainer';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
         <Route path="/" exact>
           <ItemListContainer titulo='Lo que buscas, y mas.....' />  
         </Route>  
-        <Route path="/:producto" exact>
-          <ItemListContainer titulo='Productos' />  
+        <Route path="/:categoria/:id" exact>
+          <ItemDetailContainer titulo='Productos' />  
         </Route>  
         </Switch>
       </div>
