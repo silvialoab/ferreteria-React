@@ -2,7 +2,9 @@ import React from 'react';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList';
 
+
 const ItemListContainer = (props) => {
+    
     
     return (
         <div>
@@ -11,7 +13,7 @@ const ItemListContainer = (props) => {
                 <h2 >{props.subtitulo}</h2>
             </div>
             <ItemList />
-            {/*<ItemDetailContainer />*/}
+            
         </div>
     );
 };

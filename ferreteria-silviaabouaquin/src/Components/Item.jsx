@@ -1,5 +1,5 @@
 import ItemCount from "./ItemCount"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Item = ({id, descripcion, StockInitial, precio, categoria, stock}) => {
     return (

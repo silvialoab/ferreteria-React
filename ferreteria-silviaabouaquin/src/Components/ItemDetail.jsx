@@ -6,10 +6,9 @@ const ItemDetail = ({descripcion, precio, stock, imagen}) => {
         <div className='item'>
             <h2>Componente Detail</h2>
             <ul>
-                <li>{descripcion}</li>
                 <li>Stock Actual: {stock} </li>
                 <li>${precio}</li>
-                <img style={{width:"60%"}}src={imagen} alt={descripcion} />
+                <img style={{width:"80%"}} src={imagen} alt={descripcion} />
                 <ItemCount stock={stock} />
             </ul>
         </div>

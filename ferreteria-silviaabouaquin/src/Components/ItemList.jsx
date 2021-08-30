@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react"
 import Item from './Item'
 import data from './data'
+import { useParams } from 'react-router-dom'
 
 const ItemList = () =>{
-    
+    const { categoria } = useParams()
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
     useEffect(() => {
@@ -15,10 +16,17 @@ const ItemList = () =>{
             })
         }
         dataPromesa().then((res)=>{
-            setProductos(res)
-            setCargando(false)
+            if (categoria != null){
+                const productosFiltrados=res.filter((producto)=>producto.categoria===categoria)
+                setProductos(productosFiltrados)
+                setCargando(false)
+            } else{
+                setProductos(res)
+                setCargando(false)
+            }
+            
         })
-    }, [])
+    }, [categoria])
     
     return(
         <>

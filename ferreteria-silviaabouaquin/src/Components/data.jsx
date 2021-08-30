@@ -1,6 +1,6 @@
 const data = [
     { 
-        id: 1, 
+        id: '1', 
         descripcion: 'Balde de Albañil', 
         precio: 500, 
         categoria: 'Construccion',
@@ -8,7 +8,7 @@ const data = [
         imagen: './images/balde.jpg'
     },    
     { 
-        id: 2, 
+        id: '2', 
         descripcion: 'Fratacho Plastico', 
         precio: 500, 
         categoria: 'Construccion',
@@ -16,7 +16,7 @@ const data = [
         imagen: './images/fratacho.jpg'
     },
     { 
-        id: 3, 
+        id: '3', 
         descripcion: 'Caja de chapa', 
         precio: 200, 
         categoria: 'Construccion',
@@ -24,7 +24,7 @@ const data = [
         imagen: './images/caja.jpg'
     },
     { 
-        id: 4, 
+        id: '4', 
         descripcion: 'Latex interior', 
         precio: 2500, 
         categoria: 'Construccion',
@@ -32,7 +32,7 @@ const data = [
         imagen: './images/pintura.jpg'
     },
     { 
-        id: 5, 
+        id: '5', 
         descripcion: 'Llave exterior', 
         precio: 150,
         categoria: 'Electricidad', 
@@ -40,7 +40,7 @@ const data = [
         imagen: './images/llave.jpg'
     },
     { 
-        id: 6, 
+        id: '6', 
         descripcion: 'Cable bipolar', 
         precio: 5000, 
         categoria: 'Electricidad',

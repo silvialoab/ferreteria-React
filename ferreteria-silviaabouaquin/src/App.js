@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import ItemDetailContainer from './Components/ItemDetailContainer';
+import ItemList from './Components/ItemList';
 
 function App() {
   return (
@@ -15,12 +16,15 @@ function App() {
       <div className="App"  >
         <Navbar />
         <Switch>
-        <Route path="/" exact>
-          <ItemListContainer titulo='Lo que buscas, y mas.....' />  
-        </Route>  
-        <Route path="/:categoria/:id" exact>
-          <ItemDetailContainer titulo='Productos' />  
-        </Route>  
+          <Route path="/" exact>
+            <ItemListContainer titulo='Lo que buscas, y mas.....' />  
+          </Route>  
+          <Route path="/:categoria/" exact>
+            <ItemList titulo='Construccion' />  
+          </Route>
+          <Route path="/:categoria/:id" exact>
+            <ItemDetailContainer titulo='Construccion' />  
+          </Route> 
         </Switch>
       </div>
     </BrowserRouter>

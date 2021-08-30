@@ -8,7 +8,9 @@ const ItemDetailContainer = () =>{
     const [producto, setProducto] = useState([])
     const [cargando, setCargando] = useState(true)
 
-    const {categoria, id} = useParams()  
+    const {id} = useParams()  
+    
+    console.log(id)
 
     useEffect(() => {
         const productos = () => {
@@ -19,7 +21,7 @@ const ItemDetailContainer = () =>{
             })
         }
         productos().then((items)=>{
-            const producto = items.find(producto => producto.id===id)
+            const producto = items.find(producto => producto.id==id)
             setProducto(producto)
             setCargando(false)
         })
