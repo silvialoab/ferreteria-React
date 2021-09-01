@@ -3,14 +3,11 @@ import ItemCount from "./ItemCount"
 
 const ItemDetail = ({descripcion, precio, stock, imagen}) => {
     return (
-        <div className='item'>
-            <h2>Componente Detail</h2>
-            <ul>
-                <li>Stock Actual: {stock} </li>
-                <li>${precio}</li>
-                <img style={{width:"80%"}} src={imagen} alt={descripcion} />
-                <ItemCount stock={stock} />
-            </ul>
+        <div className='itemD'>
+            <h2>Articulo: {descripcion}</h2>
+            <p>Stock Actual: {stock} </p>
+            <p>${precio}</p>
+            <img style={{width:"30%"}} src={imagen} alt={descripcion} />                <ItemCount stock={stock} />
         </div>
         
     )

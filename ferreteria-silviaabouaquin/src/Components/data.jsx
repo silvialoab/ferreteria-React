@@ -5,7 +5,7 @@ const data = [
         precio: 500, 
         categoria: 'Construccion',
         stock: 24, 
-        imagen: './images/balde.jpg'
+        imagen: '/images/balde.jpg'
     },    
     { 
         id: '2', 
@@ -13,7 +13,7 @@ const data = [
         precio: 500, 
         categoria: 'Construccion',
         stock: 30,
-        imagen: './images/fratacho.jpg'
+        imagen: '/images/fratacho.jpg'
     },
     { 
         id: '3', 
@@ -21,7 +21,7 @@ const data = [
         precio: 200, 
         categoria: 'Construccion',
         stock: 40, 
-        imagen: './images/caja.jpg'
+        imagen: '/images/caja.jpg'
     },
     { 
         id: '4', 
@@ -29,7 +29,7 @@ const data = [
         precio: 2500, 
         categoria: 'Construccion',
         stock: 5, 
-        imagen: './images/pintura.jpg'
+        imagen: '/images/pintura.jpg'
     },
     { 
         id: '5', 
@@ -37,7 +37,7 @@ const data = [
         precio: 150,
         categoria: 'Electricidad', 
         stock: 36,
-        imagen: './images/llave.jpg'
+        imagen: '/images/llave.jpg'
     },
     { 
         id: '6', 
@@ -45,7 +45,7 @@ const data = [
         precio: 5000, 
         categoria: 'Electricidad',
         stock: 10, 
-        imagen: './images/pintura.jpg'
+        imagen: '/images/pintura.jpg'
     }
 ]
 
