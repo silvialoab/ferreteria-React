@@ -30,7 +30,7 @@ const ItemDetailContainer = () =>{
     return(
         <>
             {cargando ? <h2>CARGANDO PRODUCTO...</h2> :
-                <ItemDetail descripcion={producto.descripcion} stock={producto.stock} precio={producto.precio} imagen={producto.imagen} /> 
+                <ItemDetail id={producto.id} descripcion={producto.descripcion} stock={producto.stock} precio={producto.precio} imagen={producto.imagen} /> 
             }
         </>
     )  

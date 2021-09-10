@@ -3,20 +3,29 @@ import { Context } from './context/CartContext'
 
 
 const Cart = () => {
-    const {cart} = useContext(Context)
+    const {cart, total, remove, clear} = useContext(Context)
+
+    if (cart.length===0) {
+        return(
+            <p>
+                No hay elementos agregados al carrito
+            </p>
+        )
+    }
 
     return(
         <>
-            {cart.length>0?cart.map((item)=>
+            {cart.map((item)=>
                 <div>
-                    Descripcion: {item.descripcion},
-                    Precio: {item.precio},
-                    Subtotal: {item.subTotal}
-                    Cantidad: {item.count}
-                </div>):
-                <div>
-                    El carrito esta vacio
-                </div>}
+                    <h3>Id: {item.id} - Descripcion: {item.descripcion}</h3>
+                    <h4>Precio: {item.precio} </h4>
+                    <h5>Cantidad: {item.cantidad} </h5>
+                    <h5>Subtotal: {item.subTotal} </h5>
+                    <button onClick={()=>remove(item.id, item.cantidad, item.precio)}>Eliminar producto</button>
+                </div>
+            )}
+            <h2>Total carrito: {total}</h2>
+            <button onClick={()=>clear()}>Limpiar Carrito</button>
         </>
     );
 }

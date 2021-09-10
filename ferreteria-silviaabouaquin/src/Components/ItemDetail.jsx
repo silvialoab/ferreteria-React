@@ -8,10 +8,12 @@ const ItemDetail = ({id, descripcion, precio, stock, imagen}) => {
     const [compra, setCompra] = useState(false)
     const {onAdd} = useContext(Context)
 
-    const agregar = (props) => {
+    const agregar = (cantidad) => {
         setCompra(true)
-        onAdd({id, descripcion, precio}, props.count)
-        console.log(`agregaste ${props.count} al carrito`)
+        console.log(cantidad)
+        onAdd({id, descripcion, precio}, cantidad)
+        console.log({id})
+        console.log(`agregaste ${cantidad} al carrito`)
     }
     return (
         <div className='itemD'>
