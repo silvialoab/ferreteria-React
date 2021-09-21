@@ -1,31 +1,27 @@
 import React, {useState, useEffect} from "react"
 import Item from './Item'
-import data from './data'
+//import data from './data'
 import { useParams } from 'react-router-dom'
+import { misArticulos} from "../Components/firebase/Firebase"
 
 const ItemList = () =>{
     const { categoria } = useParams()
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
     useEffect(() => {
-        const dataPromesa = () => {
-            return new Promise((resolve,reject)=>{
-                setTimeout(()=>{
-                    resolve(data)
-                },2000)
+        if (categoria != null){
+            console.log('nada')
+        } else{
+            const articulos=misArticulos()
+            articulos.then((data)=>{
+                const auxArticulos=[]
+                data.forEach(articulos=>{
+                    auxArticulos.push({id:articulos.id, descripcion:Item.data().descripcion, precio:Item.data().precio, descripcion:Item.data().descripcion, stock:Item.data().stock, imagen:Item.data().imagen})
+                });
+                setProductos(auxArticulos)
+                setCargando(false)
             })
         }
-        dataPromesa().then((res)=>{
-            if (categoria != null){
-                const productosFiltrados=res.filter((producto)=>producto.categoria===categoria)
-                setProductos(productosFiltrados)
-                setCargando(false)
-            } else{
-                setProductos(res)
-                setCargando(false)
-            }
-            
-        })
     }, [categoria])
     
     return(
