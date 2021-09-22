@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import ItemDetail from './ItemDetail'
-import data from './data'
 import { useParams } from 'react-router-dom'
+import { art } from "../Components/firebase/Firebase"
 
 const ItemDetailContainer = () =>{
     
@@ -10,22 +10,13 @@ const ItemDetailContainer = () =>{
 
     const {id} = useParams()  
     
-    console.log(id)
-
     useEffect(() => {
-        const productos = () => {
-            return new Promise((resolve,reject)=>{
-                setTimeout(()=>{
-                    resolve(data)
-                },2000)
-            })
-        }
-        productos().then((items)=>{
-            const producto = items.find(producto => producto.id===id)
-            setProducto(producto)
+        const articulo = art(id)
+            articulo.then((data)=>{
+            setProducto(data.data())
             setCargando(false)
         })
-    }, [])
+    }, [id])
     
     return(
         <>

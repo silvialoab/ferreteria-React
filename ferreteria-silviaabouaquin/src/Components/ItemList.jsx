@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import Item from './Item'
 //import data from './data'
 import { useParams } from 'react-router-dom'
-import { misArticulos} from "../Components/firebase/Firebase"
+import { misArticulos, articulosCat} from "../Components/firebase/Firebase"
 
 const ItemList = () =>{
     const { categoria } = useParams()
@@ -10,13 +10,21 @@ const ItemList = () =>{
     const [cargando, setCargando] = useState(true)
     useEffect(() => {
         if (categoria != null){
-            console.log('nada')
+            const articulos=articulosCat(categoria)
+            articulos.then((data)=>{
+                const auxArticulos=[]
+                data.forEach(articulo => {
+                    auxArticulos.push({id:articulo.id, categoria:articulo.data().categoria, descripcion:articulo.data().descripcion, precio:articulo.data().precio, stock:articulo.data().stock, imagen:articulo.data().imagen})
+                });
+                setProductos(auxArticulos)
+                setCargando(false)
+            })
         } else{
             const articulos=misArticulos()
             articulos.then((data)=>{
                 const auxArticulos=[]
-                data.forEach(articulos=>{
-                    auxArticulos.push({id:articulos.id, descripcion:Item.data().descripcion, precio:Item.data().precio, descripcion:Item.data().descripcion, stock:Item.data().stock, imagen:Item.data().imagen})
+                data.forEach(articulo => {
+                    auxArticulos.push({id:articulo.id, categoria:articulo.data().categoria, descripcion:articulo.data().descripcion, precio:articulo.data().precio, stock:articulo.data().stock, imagen:articulo.data().imagen})
                 });
                 setProductos(auxArticulos)
                 setCargando(false)

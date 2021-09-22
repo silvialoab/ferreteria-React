@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList';
 
 
