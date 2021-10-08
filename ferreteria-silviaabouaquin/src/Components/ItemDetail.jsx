@@ -10,10 +10,8 @@ const ItemDetail = ({id, descripcion, precio, stock, imagen}) => {
 
     const agregar = (cantidad) => {
         setCompra(true)
-        console.log(cantidad)
         onAdd({id, descripcion, precio}, cantidad)
-        console.log({id})
-        console.log(`agregaste ${cantidad} al carrito`)
+        
     }
     return (
         <div className='itemD'>

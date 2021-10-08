@@ -1,6 +1,6 @@
 button {
   padding: 0.8rem;
-  background-color:aqua;
+  background-color:rgb(74, 153, 153);
   width: 150px;
 }
 
@@ -40,5 +40,5 @@ button {
 .itemD{
   width: 50%;
   margin: 20px;
-  border: 3px solid cadetblue
+  border: 3px solid rgb(128, 29, 86)
 }

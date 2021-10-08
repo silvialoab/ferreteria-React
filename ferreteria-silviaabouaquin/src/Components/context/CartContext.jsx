@@ -9,7 +9,7 @@ const CartFuncion = ({children}) => {
 
     const onAdd = (producto, cantidad) => {
         const itemExiste = cart.find(item=>item.id===producto.id)
-
+        
         if (!itemExiste) {
             setCart([...cart, {id:producto.id, descripcion:producto.descripcion, precio:producto.precio, cantidad:cantidad, subTotal:(producto.precio*cantidad)}])
             setUnidades(unidades+1)

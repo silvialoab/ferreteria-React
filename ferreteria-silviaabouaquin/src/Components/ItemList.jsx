@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import Item from './Item'
-//import data from './data'
 import { useParams } from 'react-router-dom'
 import { misArticulos, articulosCat} from "../Components/firebase/Firebase"
 
@@ -11,7 +10,7 @@ const ItemList = () =>{
     useEffect(() => {
         if (categoria != null){
             const articulos=articulosCat(categoria)
-            articulos.then((data)=>{
+                articulos.then((data)=>{
                 const auxArticulos=[]
                 data.forEach(articulo => {
                     auxArticulos.push({id:articulo.id, categoria:articulo.data().categoria, descripcion:articulo.data().descripcion, precio:articulo.data().precio, stock:articulo.data().stock, imagen:articulo.data().imagen})
